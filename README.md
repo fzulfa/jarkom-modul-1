@@ -1,4 +1,4 @@
-# MODUL 1 JARKOM
+# MODUL 1 JARINGAN KOMPUTER 2018
 ## 1. Wire Crimping
 
 ### 1.1. Kebutuhan
