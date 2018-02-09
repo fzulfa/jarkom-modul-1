@@ -54,28 +54,29 @@ Kabel crossover merupakan kabel yang memiliki susunan berbeda antara ujung satu 
 
 ## 2. WIRESHARK
 
-###2.1. Tujuan Penggunaan
+### 2.1. Tujuan Penggunaan
 
-###2.2. Instalasi
+### 2.2. Instalasi
 
-###2.3. Filters
+### 2.3. Filters
 
 Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan __Display Filter__.
 
-####2.3.1. Capture Filter
+#### 2.3.1. Capture Filter
 
 - Definisi: Memilah paket yang akan ditangkap (captured). Artinya paket yang tidak memenuhi kriteria dibiarkan lewat tanpa ditangkap.
 - Sintaks filter dapat terdiri dari 1 atau lebih __primitive__. Primitive sendiri biasanya terdiri dari sebuah __id__ (bilangan atau nama) yang didahului oleh 1 atau lebih jenis __qualifier__. Tapi perlu diingat bahwa dalam satu primitive tidak boleh ada 2 qualifier sejenis.
 - Jenis qualifier:
+
 	Qualifier | Tujuan | Contoh
 	_type_ | Menentukan jenis id atau nama yang menjadi nilai filter | `host`, `net`, `port`, `portrange`
 	_dir_ | Menentukan direction atau arah dari id | `src`, `dst`, dan lain-lain
 	_proto_ | Menentukan protokol dari id | `tcp`, `udp`, `ether`, dan lain-lain.
-	
+
 - Sintaks filter dapat memuat operator, tanda kurung, negasi ('!' atau 'not'), dan konjungsi ('&&'/'and' atau '||'/'or'). Konjungsi digunakan untuk menghubungkan 2 primitive dalam satu sintaks.
 - Contoh penggunaan filter dan maksudnya.
 
-####2.3.2. Display Filter
+#### 2.3.2. Display Filter
 
 - Definisi: Memilah paket yang akan ditampilkan (displayed) setelah sebelumnya ditangkap
 	- Secara umum sintaks display filter terdiri dari [protocol] [operator] [value]
@@ -87,10 +88,10 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan
 		5. [...]		-> substring operator
 		6. 'in'			-> membership operator
 	
-###2.4. Export data hasil packet capture
+### 2.4. Export data hasil packet capture
 
-###2.5. HTTP basic + digest
+### 2.5. HTTP basic + digest
 
-###2.6. HTTP request method GET + POST
+### 2.6. HTTP request method GET + POST
 
-###2.7. FTP
+### 2.7. FTP
