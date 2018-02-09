@@ -2,6 +2,39 @@
 
 ## 1. Wire Crimping
 
+### 1.1. Kebutuhan
+
+Peralatan dan bahan yang perlu dipersiapkan:
+
+![Alt Text](url)
+
+### 1.2. Jenis Kabel
+
+#### 1.2.1. Straight
+
+Kabel straight merupakan kabel yang memiliki cara pemasangan yang sama antara ujung satu dengan ujung yang lainnya. Kabel straight digunakan __untuk menghubungkan 2 device yang berbeda__, misalnya antara switch dengan router dan komputer dengan switch. Urutan kabel straight jika dilihat dari sisi tembaga RJ-45 adalah seperti dibawah ini:
+
+#### 1.2.2. Crossover
+
+Kabel crossover merupakan kabel yang memiliki susunan berbeda antara ujung satu dengan ujung dua. Kabel crossover digunakan __untuk menghubungkan 2 device yang sama__. Jika dilihat dari sisi tembaga RJ-45, berikut susunan kabel crossover:
+
+### 1.3. Cara Crimping
+
+1. Mengupas kulit kabel selebar 2 cm menggunakan tang crimping.
+
+2. Menyusun rapi delapan kabel yang terdapat didalam kabel STP sesuai dengan jenis kabel mana yang ingin dibuat (straight atau cross).
+
+3. Meluruskan kabel yang masih kusut.
+
+4. Meratakan ujung kabel dengan memotong nya menggunakan tang crimping.
+
+5. Memasukan kabel kedalam konektor RJ-45, pastikan ujung kabel menyentuh ujung RJ-45, dan jepitlah menggunakan tang crimping.
+
+6. Lakukan hal serupa pada kedua ujung kabel.
+
+7. Menguji menggunakan LAN tester, jika semua lampu menyala, berarti kabel tersebut telah di crimping dengan benar dan bisa digunakan.
+
+
 ## 2. WIRESHARK
 
 ### Tujuan Penggunaan
