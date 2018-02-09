@@ -6,7 +6,10 @@
 
 Peralatan dan bahan yang perlu dipersiapkan:
 
-![Alt Text](url)
+![Tang Crimping](/images/tang.jpg)
+![RJ-45](/images/rj45.jpg)
+![Kabel UTP](/images/kabelutp.jpg)
+![LAN Tester](/images/lantester.jpg)
 
 ### 1.2. Jenis Kabel
 
@@ -20,7 +23,7 @@ Kabel crossover merupakan kabel yang memiliki susunan berbeda antara ujung satu 
 
 ### 1.3. Cara Crimping
 
-1. Mengupas kulit kabel selebar 2 cm menggunakan tang crimping.
+1. Mengupas kulit kabel selebar +-2 cm menggunakan tang crimping.
 
 2. Menyusun rapi delapan kabel yang terdapat didalam kabel STP sesuai dengan jenis kabel mana yang ingin dibuat (straight atau cross).
 
