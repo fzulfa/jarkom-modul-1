@@ -1,20 +1,16 @@
-# Modul 1 Jaringan Komputer
+# Modul 1 Jaringan Komputer 2018
 
 ## 1. Wire Crimping
 
 ## 2. WIRESHARK
 
+### Tujuan Penggunaan
+
+### Instalasi
+
 ### Filters
 
-	   Filter
-       
-       |
-       
-  -----------
-
-  |		      |
-
-Capture		Display
+Terdapat dua macam filter yang disediakan oleh Wireshark: Capture Filter dan Display Filter.
 
 #### Capture Filter
 
@@ -36,8 +32,8 @@ Capture		Display
 		2. 'or' atau '||'	-> logical OR
 		3. 'xor' atau '^^'	-> logical XOR
 		4. 'not' atau '!'	-> logical NOT
-		5. [...]			-> substring operator
-		6. 'in'				-> membership operator
+		5. [...]		-> substring operator
+		6. 'in'			-> membership operator
 	
 ### Export data hasil packet capture
 
