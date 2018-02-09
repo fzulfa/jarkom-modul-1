@@ -64,11 +64,12 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan
 
 #### 2.3.1. Capture Filter
 
-- Definisi: Memilah paket yang akan ditangkap (captured). Artinya paket yang tidak memenuhi kriteria dibiarkan lewat tanpa ditangkap.
+- Definisi: Memilah paket yang akan ditangkap (_captured_). Artinya paket yang tidak memenuhi kriteria dibiarkan lewat tanpa ditangkap.
 - Sintaks filter dapat terdiri dari 1 atau lebih __primitive__. Primitive sendiri biasanya terdiri dari sebuah __id__ (bilangan atau nama) yang didahului oleh 1 atau lebih jenis __qualifier__. Tapi perlu diingat bahwa dalam satu primitive tidak boleh ada 2 qualifier sejenis.
 - Jenis qualifier:
 
-	Qualifier | Tujuan | Contoh
+	Qualifier | Keterangan | Contoh
+	----------|--------|--------
 	_type_ | Menentukan jenis id atau nama yang menjadi nilai filter | `host`, `net`, `port`, `portrange`
 	_dir_ | Menentukan direction atau arah dari id | `src`, `dst`, dan lain-lain
 	_proto_ | Menentukan protokol dari id | `tcp`, `udp`, `ether`, dan lain-lain.
@@ -78,15 +79,18 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan
 
 #### 2.3.2. Display Filter
 
-- Definisi: Memilah paket yang akan ditampilkan (displayed) setelah sebelumnya ditangkap
-	- Secara umum sintaks display filter terdiri dari [protocol] [operator] [value]
+- Definisi: Memilah paket yang akan ditampilkan (_displayed_) setelah sebelumnya ditangkap
+	- Secara umum sintaks display filter terdiri dari `[protocol] [operator] [value]`
 	- Sebagaimana capture filter, display filter juga bisa menggabungkan dua filter expression dengan logical operator:
-		1. 'and' atau '&&'	-> logical AND
-		2. 'or' atau '||'	-> logical OR
-		3. 'xor' atau '^^'	-> logical XOR
-		4. 'not' atau '!'	-> logical NOT
-		5. [...]		-> substring operator
-		6. 'in'			-> membership operator
+
+		Logical Operator | Keterangan
+		-----------------|-----------
+		'and' atau '&&' | logical AND
+		'or' atau '||' | logical OR
+		'xor' atau '^^' | logical XOR
+		'not' atau '!' | logical NOT
+		[...] | substring operator
+		'in' | membership operator
 	
 ### 2.4. Export data hasil packet capture
 
@@ -95,3 +99,15 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan
 ### 2.6. HTTP request method GET + POST
 
 ### 2.7. FTP
+
+## Referensi
+
+https://wiki.wireshark.org/
+
+https://www.wireshark.org/docs/wsug_html_chunked/ChCapCaptureFilterSection.html
+
+http://www.tcpdump.org/manpages/pcap-filter.7.html
+
+https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html
+
+https://wiki.wireshark.org/ProtocolReference
