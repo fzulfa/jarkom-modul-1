@@ -99,7 +99,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan
 
 ### 2.7. FTP
 
-LATIHAN
+## LATIHAN
 1. Ketika mengakses suatu halaman web, berapakah port yang dituju oleh suatu paket?
 2. Apa sajakah perbedaan ketika mengakses halaman utama website if.its.ac.id,
 monta.if.its.ac.id, dan rbtc.if.its.ac.id? Jelaskan jawaban anda.
