@@ -78,19 +78,17 @@ __3. *Trailer*__
 
 	Trailer, kadang-kadang disebut __*footer*__, biasanya memuat sepasang bit yang memberi sinyal pada perangkat penerima bahwa paket sudah mencapai ujungnya. Bisa juga trailer memuat semacam _error checking_.
 
-Nah paket-paket ini ada kalanya menarik untuk dianalisis lebih lanjut. Maka dari itu di sini kita akan dikenalkan dengan salah satu tools untuk meng-_capture_ paket, yaitu __Wireshark__.
+Nah paket-paket ini ada kalanya menarik untuk dianalisis lebih lanjut. Maka dari itu di sini kita akan dikenalkan dengan salah satu tools untuk analisis paket, yaitu __Wireshark__.
 
-### 2.1. Tujuan Penggunaan
-
-### 2.2. Instalasi
+### 2.1. Instalasi
 
 Instalasi pada OS Windows atau macOS cukup mengunduh installer pada [laman resmi Wireshark](https://www.wireshark.org/download.html) dan menjalankannya. Sedangkan pada OS Linux atau FreeBSD tutorialnya bisa dilihat di [sini](http://linuxtechlab.com/install-wireshark-linux-centosubuntu/).
 
-### 2.3. Filters
+### 2.2. Filters
 
 Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ dan __*Display Filter*__.
 
-#### 2.3.1. Capture Filter
+#### 2.2.1. Capture Filter
 
 - Definisi: Memilah paket yang akan ditangkap (_captured_). Artinya paket yang tidak memenuhi kriteria dibiarkan lewat tanpa ditangkap.
 - Sintaks filter dapat terdiri dari 1 atau lebih __primitive__. Primitive sendiri biasanya terdiri dari sebuah __id__ (bilangan atau nama) yang didahului oleh 1 atau lebih jenis __qualifier__. Tapi perlu diingat bahwa dalam satu primitive tidak boleh ada 2 qualifier sejenis.
@@ -105,7 +103,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 - Sintaks filter dapat memuat operator, tanda kurung, negasi (`!` / `not`), dan konjungsi (`&&` / `and` atau `||` / `or`). Konjungsi digunakan untuk menghubungkan 2 primitive dalam satu sintaks.
 - Contoh penggunaan filter dan maksudnya.
 
-#### 2.3.2. Display Filter
+#### 2.2.2. Display Filter
 
 - Definisi: Memilah paket yang akan ditampilkan (_displayed_) setelah sebelumnya ditangkap
 	- Secara umum sintaks display filter terdiri dari `[protocol].[field] [comparison operator] [value]`. Berikut ini daftar __*comparison operator*__ yang tersedia:
@@ -127,19 +125,19 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 		Logical Operator | Keterangan
 		-----------------|-----------
 		`and` atau `&&` | logical AND
-		`or` atau "`||`" | logical OR
+		`or` atau `\|\|` | logical OR
 		`xor` atau `^^` | logical XOR
 		`not` atau `!` | logical NOT
 		`[...]` | substring operator
 		`in` | membership operator
 	
-### 2.4. Export data hasil packet capture
+### 2.3. Export data hasil packet capture
 
-### 2.5. HTTP basic + digest
+### 2.4. HTTP basic + digest
 
-### 2.6. HTTP request method GET + POST
+### 2.5. HTTP request method GET + POST
 
-### 2.7. FTP
+### 2.6. FTP
 
 ## LATIHAN
 1. Ketika mengakses suatu halaman web, berapakah port yang dituju oleh suatu paket?
