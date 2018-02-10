@@ -1,6 +1,8 @@
 # MODUL 1 JARINGAN KOMPUTER 2018
 ## 1. Wire Crimping
 
+Dalam membangun jaringan komputer, tentunya dibutuhkan segala hal yang dapat menghubungkan perangkat-perangkat komputer yang ada. Hingga saat ini, komponen paling fundamental dalam jaringan komputer adalah kabel. Sekalipun teknologi nirkabel sudah lama ditemukan dan dikembangkan, tapi peran kabel jaringan tetap belum bisa tergantikan. Oleh karena itu di sini kita akan belajar bagaimana membuat kabel jaringan (dalam hal ini kabel UTP) menjadi fungsional.
+
 ### 1.1. Kebutuhan
 
 Peralatan dan bahan yang perlu dipersiapkan:
@@ -53,13 +55,36 @@ Kabel crossover merupakan kabel yang memiliki susunan berbeda antara ujung satu 
 
 ## 2. WIRESHARK
 
+Sebuah jaringan komputer dibangun dengan tujuan menghubungkan satu end-point dengan end-point lainnya. Tiap kali terjadi komunikasi antar perangkat dalam jaringan pasti melibatkan transaksi data yang dikirim dalam paket-paket jaringan. Struktur paket jaringan terdiri dari:
+
+1. __*Header*__
+
+Bagian header memuat instruksi tentang data yang dibawa oleh paket. Instruksi tsb di antaranya bisa meliputi:
+
+Instruksi | Keterangan
+--------- | ----------
+_Panjang paket_ | Sebagian jaringan sudah memiliki panjang paket yang baku (fixed-length), sementara sebagian yang lain bergantung pada header untuk memuat informasi ini
+_Sinkronisasi_ | Beberapa bit yang membantu paket mencocokkan jaringan yang dimaksud
+_Nomor paket_ | Menunjukkan urutan dari total paket yang ada
+_Protokol_ | Pada jaringan yang membawa lebih dari satu macam informasi, protokol ini menunjukkan jenis paket yang ditransmisikan, apakah termasuk e-mail, halaman web, atau yang lain
+_Alamat tujuan_ | Ke mana paket dikirimkan
+_Alamat asal_ | Dari mana paket dikirimkan
+
+2. __*Payload*__
+
+Payload juga disebut sebagai __*body*__ dari paket. Pada bagian inilah data yang akan dikirimkan lewat paket berada.
+
+3. __*Trailer*__
+
+Trailer, kadang-kadang disebut __*footer*__, biasanya memuat sepasang bit yang memberi sinyal pada perangkat penerima bahwa paket sudah mencapai ujungnya. Bisa juga trailer memuat semacam _error checking_.
+
 ### 2.1. Tujuan Penggunaan
 
 ### 2.2. Instalasi
 
 ### 2.3. Filters
 
-Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan __Display Filter__.
+Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ dan __*Display Filter*__.
 
 #### 2.3.1. Capture Filter
 
@@ -73,7 +98,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan
 	_dir_ | Menentukan direction atau arah dari id | `src`, `dst`, dan lain-lain
 	_proto_ | Menentukan protokol dari id | `tcp`, `udp`, `ether`, dan lain-lain.
 
-- Sintaks filter dapat memuat operator, tanda kurung, negasi ('!' atau 'not'), dan konjungsi ('&&'/'and' atau '||'/'or'). Konjungsi digunakan untuk menghubungkan 2 primitive dalam satu sintaks.
+- Sintaks filter dapat memuat operator, tanda kurung, negasi (`!` / `not`), dan konjungsi (`&&` / `and` atau `||` / `or`). Konjungsi digunakan untuk menghubungkan 2 primitive dalam satu sintaks.
 - Contoh penggunaan filter dan maksudnya.
 
 #### 2.3.2. Display Filter
@@ -84,12 +109,12 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __Capture Filter__ dan
 
 		Logical Operator | Keterangan
 		-----------------|-----------
-		'and' atau '&&' | logical AND
-		'or' atau '||' | logical OR
-		'xor' atau '^^' | logical XOR
-		'not' atau '!' | logical NOT
-		[...] | substring operator
-		'in' | membership operator
+		`and` atau `&&` | logical AND
+		`or` atau `||` | logical OR
+		`xor` atau `^^` | logical XOR
+		`not` atau `!` | logical NOT
+		`[...]` | substring operator
+		`in` | membership operator
 	
 ### 2.4. Export data hasil packet capture
 
@@ -118,6 +143,8 @@ download?
 menghapus file?
 
 ## Referensi
+
+https://computer.howstuffworks.com/question5251.htm
 
 https://wiki.wireshark.org/
 
