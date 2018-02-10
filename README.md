@@ -20,7 +20,7 @@ Peralatan dan bahan yang perlu dipersiapkan:
 
 ![LAN Tester](/images/lantester.jpg)
 
-### 1.2. Jenis-Jenis Pengabelan
+### 1.2. Jenis-Jenis Pengkabelan
 
 #### 1.2.1. Straight
 
