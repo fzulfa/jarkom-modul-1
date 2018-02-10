@@ -59,7 +59,7 @@ Sebuah jaringan komputer dibangun dengan tujuan menghubungkan satu end-point den
 
 __1. *Header*__
 
-	Bagian header memuat instruksi tentang data yang dibawa oleh paket. Instruksi tsb di antaranya bisa meliputi:
+Bagian header memuat instruksi tentang data yang dibawa oleh paket. Instruksi tsb di antaranya bisa meliputi:
 
 	Instruksi | Keterangan
 	--------- | ----------
@@ -72,11 +72,11 @@ __1. *Header*__
 
 __2. *Payload*__
 
-	Payload juga disebut sebagai __*body*__ dari paket. Pada bagian inilah data yang akan dikirimkan lewat paket berada.
+Payload juga disebut sebagai __*body*__ dari paket. Pada bagian inilah data yang akan dikirimkan lewat paket berada.
 
 __3. *Trailer*__
 
-	Trailer, kadang-kadang disebut __*footer*__, biasanya memuat sepasang bit yang memberi sinyal pada perangkat penerima bahwa paket sudah mencapai ujungnya. Bisa juga trailer memuat semacam _error checking_.
+Trailer, kadang-kadang disebut __*footer*__, biasanya memuat sepasang bit yang memberi sinyal pada perangkat penerima bahwa paket sudah mencapai ujungnya. Bisa juga trailer memuat semacam _error checking_.
 
 Nah paket-paket ini ada kalanya menarik untuk dianalisis lebih lanjut. Maka dari itu di sini kita akan dikenalkan dengan salah satu tools untuk analisis paket, yaitu __Wireshark__.
 
