@@ -61,14 +61,14 @@ __1. *Header*__
 
 Bagian header memuat instruksi tentang data yang dibawa oleh paket. Instruksi tsb di antaranya bisa meliputi:
 
-	Instruksi | Keterangan
-	--------- | ----------
-	_Panjang paket_ | Sebagian jaringan sudah memiliki panjang paket yang baku (_fixed-length_), sementara sebagian yang lain bergantung pada header untuk memuat informasi ini
-	_Sinkronisasi_ | Beberapa bit yang membantu paket mencocokkan jaringan yang dimaksud
-	_Nomor paket_ | Menunjukkan urutan dari total paket yang ada
-	_Protokol_ | Pada jaringan yang membawa lebih dari satu macam informasi, protokol ini menunjukkan jenis paket yang ditransmisikan, apakah termasuk e-mail, halaman web, atau yang lain
-	_Alamat tujuan_ | Ke mana paket dikirimkan
-	_Alamat asal_ | Dari mana paket dikirimkan
+Instruksi | Keterangan
+--------- | ----------
+_Panjang paket_ | Sebagian jaringan sudah memiliki panjang paket yang baku (_fixed-length_), sementara sebagian yang lain bergantung pada header untuk memuat informasi ini
+_Sinkronisasi_ | Beberapa bit yang membantu paket mencocokkan jaringan yang dimaksud
+_Nomor paket_ | Menunjukkan urutan dari total paket yang ada
+_Protokol_ | Pada jaringan yang membawa lebih dari satu macam informasi, protokol ini menunjukkan jenis paket yang ditransmisikan, apakah termasuk e-mail, halaman web, atau yang lain
+_Alamat tujuan_ | Ke mana paket dikirimkan
+_Alamat asal_ | Dari mana paket dikirimkan
 
 __2. *Payload*__
 
