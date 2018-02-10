@@ -40,7 +40,7 @@ Kabel crossover merupakan kabel yang memiliki susunan berbeda antara ujung satu 
 
 1. Mengupas kulit kabel selebar +-2 cm menggunakan tang crimping.
 
-2. Menyusun rapi delapan kabel yang terdapat didalam kabel STP sesuai dengan jenis kabel mana yang ingin dibuat (straight atau cross).
+2. Menyusun rapi delapan kabel yang terdapat didalam kabel UTP sesuai dengan jenis kabel mana yang ingin dibuat (straight atau cross).
 
 3. Meluruskan kabel yang masih kusut.
 
@@ -57,30 +57,34 @@ Kabel crossover merupakan kabel yang memiliki susunan berbeda antara ujung satu 
 
 Sebuah jaringan komputer dibangun dengan tujuan menghubungkan satu end-point dengan end-point lainnya. Tiap kali terjadi komunikasi antar perangkat dalam jaringan pasti melibatkan transaksi data yang dikirim dalam paket-paket jaringan. Struktur paket jaringan terdiri dari:
 
-1. __*Header*__
+__1. *Header*__
 
-Bagian header memuat instruksi tentang data yang dibawa oleh paket. Instruksi tsb di antaranya bisa meliputi:
+	Bagian header memuat instruksi tentang data yang dibawa oleh paket. Instruksi tsb di antaranya bisa meliputi:
 
-Instruksi | Keterangan
---------- | ----------
-_Panjang paket_ | Sebagian jaringan sudah memiliki panjang paket yang baku (fixed-length), sementara sebagian yang lain bergantung pada header untuk memuat informasi ini
-_Sinkronisasi_ | Beberapa bit yang membantu paket mencocokkan jaringan yang dimaksud
-_Nomor paket_ | Menunjukkan urutan dari total paket yang ada
-_Protokol_ | Pada jaringan yang membawa lebih dari satu macam informasi, protokol ini menunjukkan jenis paket yang ditransmisikan, apakah termasuk e-mail, halaman web, atau yang lain
-_Alamat tujuan_ | Ke mana paket dikirimkan
-_Alamat asal_ | Dari mana paket dikirimkan
+	Instruksi | Keterangan
+	--------- | ----------
+	_Panjang paket_ | Sebagian jaringan sudah memiliki panjang paket yang baku (_fixed-length_), sementara sebagian yang lain bergantung pada header untuk memuat informasi ini
+	_Sinkronisasi_ | Beberapa bit yang membantu paket mencocokkan jaringan yang dimaksud
+	_Nomor paket_ | Menunjukkan urutan dari total paket yang ada
+	_Protokol_ | Pada jaringan yang membawa lebih dari satu macam informasi, protokol ini menunjukkan jenis paket yang ditransmisikan, apakah termasuk e-mail, halaman web, atau yang lain
+	_Alamat tujuan_ | Ke mana paket dikirimkan
+	_Alamat asal_ | Dari mana paket dikirimkan
 
-2. __*Payload*__
+__2. *Payload*__
 
-Payload juga disebut sebagai __*body*__ dari paket. Pada bagian inilah data yang akan dikirimkan lewat paket berada.
+	Payload juga disebut sebagai __*body*__ dari paket. Pada bagian inilah data yang akan dikirimkan lewat paket berada.
 
-3. __*Trailer*__
+__3. *Trailer*__
 
-Trailer, kadang-kadang disebut __*footer*__, biasanya memuat sepasang bit yang memberi sinyal pada perangkat penerima bahwa paket sudah mencapai ujungnya. Bisa juga trailer memuat semacam _error checking_.
+	Trailer, kadang-kadang disebut __*footer*__, biasanya memuat sepasang bit yang memberi sinyal pada perangkat penerima bahwa paket sudah mencapai ujungnya. Bisa juga trailer memuat semacam _error checking_.
+
+Nah paket-paket ini ada kalanya menarik untuk dianalisis lebih lanjut. Maka dari itu di sini kita akan dikenalkan dengan salah satu tools untuk meng-_capture_ paket, yaitu __Wireshark__.
 
 ### 2.1. Tujuan Penggunaan
 
 ### 2.2. Instalasi
+
+Instalasi pada OS Windows atau macOS cukup mengunduh installer pada [laman resmi Wireshark](https://www.wireshark.org/download.html) dan menjalankannya. Sedangkan pada OS Linux atau FreeBSD tutorialnya bisa dilihat di [sini](http://linuxtechlab.com/install-wireshark-linux-centosubuntu/).
 
 ### 2.3. Filters
 
@@ -104,13 +108,26 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 #### 2.3.2. Display Filter
 
 - Definisi: Memilah paket yang akan ditampilkan (_displayed_) setelah sebelumnya ditangkap
-	- Secara umum sintaks display filter terdiri dari `[protocol] [operator] [value]`
-	- Sebagaimana capture filter, display filter juga bisa menggabungkan dua filter expression dengan logical operator:
+	- Secara umum sintaks display filter terdiri dari `[protocol].[field] [comparison operator] [value]`. Berikut ini daftar __*comparison operator*__ yang tersedia:
+
+		English | Comparison Operator (C-like) | Keterangan
+		--------|------------------------------|-----------
+		eq | == | Sama dengan
+		ne | != | Tidak sama dengan
+		gt | > | Lebih besar dari
+		lt | < | Lebih kecil dari
+		ge | >= | Lebih besar dari atau sama dengan
+		le | <= | Lebih kecil dari atau sama dengan
+		contains | | Protokol atau field mengandung nilai tertentu
+		matches | ~ | Protokol atau field cocok dengan _regular expression_ Perl
+		bitwise_and | & | Membandingkan nilai bit sebuah field
+
+	- Sebagaimana capture filter, display filter juga bisa menggabungkan dua filter expression dengan __*logical operator*__:
 
 		Logical Operator | Keterangan
 		-----------------|-----------
 		`and` atau `&&` | logical AND
-		`or` atau `||` | logical OR
+		`or` atau "`||`" | logical OR
 		`xor` atau `^^` | logical XOR
 		`not` atau `!` | logical NOT
 		`[...]` | substring operator
