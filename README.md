@@ -84,11 +84,17 @@ Nah paket-paket ini ada kalanya menarik untuk dianalisis lebih lanjut. Maka dari
 
 Instalasi pada OS Windows atau macOS cukup mengunduh installer pada [laman resmi Wireshark](https://www.wireshark.org/download.html) dan menjalankannya. Sedangkan pada OS Linux atau FreeBSD tutorialnya bisa dilihat di [sini](http://linuxtechlab.com/install-wireshark-linux-centosubuntu/).
 
+Setelah melakukan instalasi, jalankan Wireshark sebagai __administrator__ (Windows) atau __root__ (Linux) agar interface untuk dianalisis muncul. Kira-kira tampilan awalnya seperti ini:
+
+![Capture](/images/ws-landing.JPG)
+
 ### 2.2. Filters
 
 Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ dan __*Display Filter*__.
 
 #### 2.2.1. Capture Filter
+
+![Capture](/images/ws-capturefilter.JPG)
 
 - Definisi: Memilah paket yang akan ditangkap (_captured_). Artinya paket yang tidak memenuhi kriteria dibiarkan lewat tanpa ditangkap.
 - Sintaks filter dapat terdiri dari 1 atau lebih __primitive__. Primitive sendiri biasanya terdiri dari sebuah __id__ (bilangan atau nama) yang didahului oleh 1 atau lebih jenis __qualifier__. Tapi perlu diingat bahwa dalam satu primitive tidak boleh ada 2 qualifier sejenis.
@@ -101,37 +107,80 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 	_proto_ | Menentukan protokol dari id | `tcp`, `udp`, `ether`, dan lain-lain.
 
 - Sintaks filter dapat memuat operator, tanda kurung, negasi (`!` / `not`), dan konjungsi (`&&` / `and` atau `||` / `or`). Konjungsi digunakan untuk menghubungkan 2 primitive dalam satu sintaks.
-- Contoh penggunaan filter dan maksudnya.
+- Contoh sintaks capture filter:
+
+	Filter expression | Keterangan
+	------------------|-----------
+	`host 10.151.36.1` | Menangkap semua paket yang spesifik menuju ke atau berasal dari alamat 10.151.36.1
+	`src host 10.151.36.1` | Menangkap semua paket yang spesifik berasal dari alamat 10.151.36.1
+	`net 192.168.0.0/24` atau `net 192.168.0.0 mask 255.255.255.0` | Menangkap semua paket yang berasal dari atau menuju ke subnet 192.168.0.0/24 (Materi tentang subnet akan kalian dapat di modul 4)
+	`dst net 192.168.0.0/24` | Menangkap semua paket yang menuju ke subnet 192.168.0.0/24
+	`udp port 80` | Menangkap semua paket dengan protokol UDP yang menuju ke atau berasala dari port 25
+	`tcp src port 22 \|\| host 10.151.36.30 | Menangkap semua paket dengan protokol TCP yang berasal dari port 22, atau semua paket yang berasal dari atau menuju ke alamat 10.151.36.30
+
+- Misalkan capture filter yang digunakan adalah `tcp dst port 80`, maka hasilnya kurang lebih seperti ini:
+
+![ContohCapture](/images/ws-contohcapture1.JPG)
+
+> Note: Klik pada paket untuk melihat detilnya
 
 #### 2.2.2. Display Filter
 
+![Capture](/images/ws-displayfilter.JPG)
+
 - Definisi: Memilah paket yang akan ditampilkan (_displayed_) setelah sebelumnya ditangkap
-	- Secara umum sintaks display filter terdiri dari `[protocol].[field] [comparison operator] [value]`. Berikut ini daftar __*comparison operator*__ yang tersedia:
+- Secara umum sintaks display filter terdiri dari `[protocol].[field] [comparison operator] [value]`. Berikut ini daftar __*comparison operator*__ yang tersedia:
 
-		English | Comparison Operator (C-like) | Keterangan
-		--------|------------------------------|-----------
-		eq | == | Sama dengan
-		ne | != | Tidak sama dengan
-		gt | > | Lebih besar dari
-		lt | < | Lebih kecil dari
-		ge | >= | Lebih besar dari atau sama dengan
-		le | <= | Lebih kecil dari atau sama dengan
-		contains | | Protokol atau field mengandung nilai tertentu
-		matches | ~ | Protokol atau field cocok dengan _regular expression_ Perl
-		bitwise_and | & | Membandingkan nilai bit sebuah field
+	English | Comparison Operator (C-like) | Keterangan
+	--------|------------------------------|-----------
+	eq | == | Sama dengan
+	ne | != | Tidak sama dengan
+	gt | > | Lebih besar dari
+	lt | < | Lebih kecil dari
+	ge | >= | Lebih besar dari atau sama dengan
+	le | <= | Lebih kecil dari atau sama dengan
+	contains | | Protokol atau field mengandung nilai tertentu
+	matches | ~ | Protokol atau field cocok dengan _regular expression_ Perl
+	bitwise_and | & | Membandingkan nilai bit sebuah field
 
-	- Sebagaimana capture filter, display filter juga bisa menggabungkan dua filter expression dengan __*logical operator*__:
+- Sebagaimana capture filter, display filter juga bisa menggabungkan dua filter expression dengan __*logical operator*__:
 
-		Logical Operator | Keterangan
-		-----------------|-----------
-		`and` atau `&&` | logical AND
-		`or` atau `\|\|` | logical OR
-		`xor` atau `^^` | logical XOR
-		`not` atau `!` | logical NOT
-		`[...]` | substring operator
-		`in` | membership operator
-	
+	Logical Operator | Keterangan
+	-----------------|-----------
+	`and` atau `&&` | logical AND
+	`or` atau `\|\|` | logical OR
+	`xor` atau `^^` | logical XOR
+	`not` atau `!` | logical NOT
+	`[...]` | substring operator
+	`in` | membership operator
+
+- Contoh penggunaan display filter:
+
+	Filter expression | Keterangan
+	------------------|-----------
+	`tcp.port == 25` | Menampilkan semua paket dengan protokol TCP yang menuju ke atau berasal dari port 25
+	`ip.src == 192.168.0.1 \|\| ip.dst == 192.168.0.1` | Menampilkan semua paket yang berasal dari alamat 192.168.0.1 atau menuju ke alamat 192.168.0.1
+	`http.uri contains "its.ac.id"` | Menampilkan semua paket dengan protokol HTTP yang mengandung string "its.ac.id"
+
+- Misalkan display filter yang digunakan adalah `http.referer contains "footyroom"`, maka paket yang ditampilkan hanyalah yang [HTTP Referer](https://en.wikipedia.org/wiki/HTTP_referer)-nya mengandung string "footyroom" dan hasilnya kurang lebih sebagai berikut:
+
+![ContohDisplay](/images/ws-contohdisplay1.JPG)
+
 ### 2.3. Export data hasil packet capture
+
+1. Setelah melakukan packet capturing, pilih pada menu bar File->Export Objects->[Protokol yang diinginkan]. Dalam contoh ini dipilih protokol HTTP.
+
+2. Pilih paket yang akan di-export. Dalam contoh ini dipilih paket yang memuat gambar dari situs tertentu. Lalu klik Save dan berikan nama file, path, beserta ekstensinya jika perlu. Dalam contoh ini nama file tidak diubah.
+
+![ExportObjects](/images/ws-exportobject.JPG)
+
+3. File berhasil di-export
+
+![ExportObjects](/images/ws-exportedimage.JPG)
+
+4. Karena file tidak berekstensi, dengan Windows harus memilih aplikasi untuk membuka file
+
+![ExportObjects](/images/ws-openimage.JPG)
 
 ### 2.4. HTTP basic + digest
 
