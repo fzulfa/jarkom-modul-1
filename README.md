@@ -116,7 +116,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 	`net 192.168.0.0/24` atau `net 192.168.0.0 mask 255.255.255.0` | Menangkap semua paket yang berasal dari atau menuju ke subnet 192.168.0.0/24 (Materi tentang subnet akan kalian dapat di modul 4)
 	`dst net 192.168.0.0/24` | Menangkap semua paket yang menuju ke subnet 192.168.0.0/24
 	`udp port 80` | Menangkap semua paket dengan protokol UDP yang menuju ke atau berasala dari port 25
-	`tcp src port 22 \|\| host 10.151.36.30 | Menangkap semua paket dengan protokol TCP yang berasal dari port 22, atau semua paket yang berasal dari atau menuju ke alamat 10.151.36.30
+	`tcp src port 22 \|\| host 10.151.36.30` | Menangkap semua paket dengan protokol TCP yang berasal dari port 22, atau semua paket yang berasal dari atau menuju ke alamat 10.151.36.30
 
 - Misalkan capture filter yang digunakan adalah `tcp dst port 80`, maka hasilnya kurang lebih seperti ini:
 
@@ -182,9 +182,9 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 
 ![ExportObjects](/images/ws-openimage.JPG)
 
-### 2.4. HTTP basic + digest
+<!-- ### 2.4. HTTP basic + digest -->
 
-### 2.5. HTTP request method GET + POST
+<!-- ### 2.5. HTTP request method GET + POST -->
 
 <!-- ### 2.6. FTP -->
 
@@ -196,7 +196,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 5. Apa perbedaan ketika autentikasi menggunakan method basic dengan digest?
 6. Apa perbedaan ketika mengakses halaman web biasa dengan ketika proses login terjadi?
 7. Apa saja yang selalu dikirimkan browser ke web server?
-8. Apa perbedaan ketika mengakses suatu website dengan dan tanpa proxy?
+<!-- 8. Apa perbedaan ketika mengakses suatu website dengan dan tanpa proxy? -->
 <!-- 9. Perintah apa saja yang dikirimkan oleh FTP client ketika login? -->
 <!-- 10. Perintah apa saja yang dikirimkan oleh FTP client ketika melihat isi direktori, upload, dan download? -->
 <!-- 11. Perintah apa saja yang dikirimkan oleh FTP client ketika menyalin, memindahkan, dan menghapus file? -->
