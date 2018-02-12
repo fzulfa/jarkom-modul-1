@@ -186,25 +186,20 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 
 ### 2.5. HTTP request method GET + POST
 
-[//]: # ### 2.6. FTP
+<!-- ### 2.6. FTP -->
 
 ## LATIHAN
 1. Ketika mengakses suatu halaman web, berapakah port yang dituju oleh suatu paket?
-2. Apa sajakah perbedaan ketika mengakses halaman utama website if.its.ac.id,
-monta.if.its.ac.id, dan rbtc.if.its.ac.id? Jelaskan jawaban anda.
-3. Ada berapa jumlah paket yang dikirimkan oleh web server ketika mengunduh file? Mengapa
-terjadi yang seperti itu?
-4. Dari hasil analisa paket, apa perbedaan ketika menggunakan persistent connection dan
-non-persistent connection?
+2. Apa sajakah perbedaan ketika mengakses halaman utama website if.its.ac.id, monta.if.its.ac.id, dan rbtc.if.its.ac.id? Jelaskan jawaban anda.
+3. Ada berapa jumlah paket yang dikirimkan oleh web server ketika mengunduh file? Mengapa terjadi yang seperti itu?
+4. Dari hasil analisa paket, apa perbedaan ketika menggunakan persistent connection dan non-persistent connection?
 5. Apa perbedaan ketika autentikasi menggunakan method basic dengan digest?
 6. Apa perbedaan ketika mengakses halaman web biasa dengan ketika proses login terjadi?
 7. Apa saja yang selalu dikirimkan browser ke web server?
 8. Apa perbedaan ketika mengakses suatu website dengan dan tanpa proxy?
-[//]: # 9. Perintah apa saja yang dikirimkan oleh FTP client ketika login?
-[//]: # 10. Perintah apa saja yang dikirimkan oleh FTP client ketika melihat isi direktori, upload, dan
-download?
-[//]: # 11. Perintah apa saja yang dikirimkan oleh FTP client ketika menyalin, memindahkan, dan
-menghapus file?
+<!-- 9. Perintah apa saja yang dikirimkan oleh FTP client ketika login? -->
+<!-- 10. Perintah apa saja yang dikirimkan oleh FTP client ketika melihat isi direktori, upload, dan download? -->
+<!-- 11. Perintah apa saja yang dikirimkan oleh FTP client ketika menyalin, memindahkan, dan menghapus file? -->
 
 ## Referensi
 
