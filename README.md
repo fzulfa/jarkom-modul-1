@@ -186,7 +186,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 
 ### 2.5. HTTP request method GET + POST
 
-### 2.6. FTP
+[//] # ### 2.6. FTP
 
 ## LATIHAN
 1. Ketika mengakses suatu halaman web, berapakah port yang dituju oleh suatu paket?
@@ -200,10 +200,10 @@ non-persistent connection?
 6. Apa perbedaan ketika mengakses halaman web biasa dengan ketika proses login terjadi?
 7. Apa saja yang selalu dikirimkan browser ke web server?
 8. Apa perbedaan ketika mengakses suatu website dengan dan tanpa proxy?
-9. Perintah apa saja yang dikirimkan oleh FTP client ketika login?
-10. Perintah apa saja yang dikirimkan oleh FTP client ketika melihat isi direktori, upload, dan
+[//] # 9. Perintah apa saja yang dikirimkan oleh FTP client ketika login?
+[//] # 10. Perintah apa saja yang dikirimkan oleh FTP client ketika melihat isi direktori, upload, dan
 download?
-11. Perintah apa saja yang dikirimkan oleh FTP client ketika menyalin, memindahkan, dan
+[//] # 11. Perintah apa saja yang dikirimkan oleh FTP client ketika menyalin, memindahkan, dan
 menghapus file?
 
 ## Referensi
