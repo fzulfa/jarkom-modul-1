@@ -160,7 +160,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 	------------------|-----------
 	`tcp.port == 25` | Menampilkan semua paket dengan protokol TCP yang menuju ke atau berasal dari port 25
 	`ip.src == 192.168.0.1 \|\| ip.dst == 192.168.0.1` | Menampilkan semua paket yang berasal dari alamat 192.168.0.1 atau menuju ke alamat 192.168.0.1
-	`http.uri contains "its.ac.id"` | Menampilkan semua paket dengan protokol HTTP yang mengandung string "its.ac.id"
+	`http.request.uri contains "its.ac.id"` | Menampilkan semua paket dengan protokol HTTP yang mengandung string "its.ac.id"
 
 - Misalkan display filter yang digunakan adalah `http.referer contains "footyroom"`, maka paket yang ditampilkan hanyalah yang [HTTP Referer](https://en.wikipedia.org/wiki/HTTP_referer)-nya mengandung string "footyroom" dan hasilnya kurang lebih sebagai berikut:
 
