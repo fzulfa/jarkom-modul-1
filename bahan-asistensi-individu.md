@@ -22,3 +22,4 @@ Lalu untuk keluar dari akses FTP bisa menggunakan perintah `bye` atau `exit`.
 4. Sebutkan command apa saja yang muncul dari hasil packet capture beserta fungsinya. Coba juga gunakan display filter untuk memilih packet dengan protokol FTP saja.
 
 ![CaptureFTP](/images/ws-ftp.png)
+
