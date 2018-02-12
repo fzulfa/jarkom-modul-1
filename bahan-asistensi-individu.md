@@ -27,7 +27,7 @@ Lalu untuk keluar dari akses FTP bisa menggunakan perintah `bye` atau `exit`.
 
 ### Connections
 
-Koneksi yang dilakukan dengan protokol HTTP sifatnya ada 2 macam: [http://whatis.techtarget.com/definition/persistent-connection-HTTP-persistent-connection](__Persistent__ dan __Non-Persistent__). Koneksi yang terbentuk ini ada 2 arah: dari Web Browser dan dari Web Server. Kebanyakan Web Browser mutakhir selalu menggunakan koneksi Persistent. Sedangkan Web Server ada yang menyediakan koneksi Persistent maupun non-Persistent, walaupun memang biasanya yang lebih banyak digunakan adalah yang Persistent. Jenis koneksi dari Web Server bisa diatur di file konfigurasinya, yang nanti mungkin akan kalian dapatkan di modul-modul selanjutnya.
+Koneksi yang dilakukan dengan protokol HTTP sifatnya ada 2 macam: [__Persistent__ dan __Non-Persistent__](http://whatis.techtarget.com/definition/persistent-connection-HTTP-persistent-connection). Koneksi yang terbentuk ini ada 2 arah: dari Web Browser dan dari Web Server. Kebanyakan Web Browser mutakhir selalu menggunakan koneksi Persistent. Sedangkan Web Server ada yang menyediakan koneksi Persistent maupun non-Persistent, walaupun memang biasanya yang lebih banyak digunakan adalah yang Persistent. Jenis koneksi dari Web Server bisa diatur di file konfigurasinya, yang nanti mungkin akan kalian dapatkan di modul-modul selanjutnya.
 
 - Web server yang menyediakan koneksi non-Persistent ketika kita lihat lebih detil isi paketnya kira-kira seperti ini:
 
