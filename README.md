@@ -109,7 +109,7 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 - Sintaks filter dapat memuat operator, tanda kurung, negasi (`!` / `not`), dan konjungsi (`&&` / `and` atau `||` / `or`). Konjungsi digunakan untuk menghubungkan 2 primitive dalam satu sintaks.
 - Contoh sintaks capture filter:
 
-	Filter expression | Keterangan
+	Filter expression / Primitive(s) | Keterangan
 	------------------|-----------
 	`host 10.151.36.1` | Menangkap semua paket yang spesifik menuju ke atau berasal dari alamat 10.151.36.1
 	`src host 10.151.36.1` | Menangkap semua paket yang spesifik berasal dari alamat 10.151.36.1
