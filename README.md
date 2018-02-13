@@ -107,6 +107,10 @@ Terdapat dua macam filter yang disediakan oleh Wireshark: __*Capture Filter*__ d
 	_proto_ | Menentukan protokol dari id | `tcp`, `udp`, `ether`, dan lain-lain.
 
 - Sintaks filter dapat memuat operator, tanda kurung, negasi (`!` / `not`), dan konjungsi (`&&` / `and` atau `||` / `or`). Konjungsi digunakan untuk menghubungkan 2 primitive dalam satu sintaks.
+- Kurang lebih hubungan antara primitive, qualifier, id, dan operator adalah seperti dalam gambar ini:
+
+![CaptureSyntax](/images/ws-capturesyntax.png)
+
 - Contoh sintaks capture filter:
 
 	Filter expression / Primitive(s) | Keterangan
